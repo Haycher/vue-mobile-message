@@ -1,7 +1,7 @@
 {
   "name": "vue-mobile-message",
-  "version": "1.2.4",
-  "description": "README file fix",
+  "version": "1.2.6",
+  "description": "fix button bugs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
