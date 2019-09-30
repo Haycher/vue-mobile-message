@@ -37,11 +37,11 @@ this.$loading.hide();
 ```JavaScript
 /**
  * @param {
- *  content,
- *  title,
- *  type,
- *  btn{ String || Object }
- * } options
+    content,
+    title,
+    type,
+    btn{ String || Object }
+  } options
  */
 this.$alert(options)
 this.$alert({
@@ -83,12 +83,12 @@ this.$alert.success(content, [btn]).then(() => {
 ```JavaScript
 /**
  * @param {
- *  content,
- *  title,
- *  type,
- *  btn{ String || Object },
- *  btnArr,
- * } options
+  content,
+  title,
+  type,
+  btn{ String || Object },
+  btnArr,
+ } options
  */
 //define left button text and color
 this.$confirm({
