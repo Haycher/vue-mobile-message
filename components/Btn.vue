@@ -1,19 +1,11 @@
 <template>
     <div class="spring_falling__message_box_btn_wraper">
-        <template v-if="btns.length === 2">
-            <div class="spring_falling__message_box_btn message_box_btn___1"
-                :style="btns[0].color ? {color: btns[0].color} : {}"
-                @click="$emit('click', true)"
-            >{{btns[0].text}}</div>
-            <div class="spring_falling__message_box_btn message_box_btn___2"
-                :style="btns[1].color ? {color: btns[1].color} : {}"
-                @click="$emit('click', false)"
-            >{{btns[1].text}}</div>
-        </template>
-        <div v-else class="spring_falling__message_box_btn message_box_btn___3"
-            :style="btns[0].color ? {color: btns[0].color} : {}"
-            @click="$emit('click', true)"
-        >{{btns[0].text}}</div>
+        <div
+            v-for="(item, index) in btnArr" :key="index"
+            :class="['spring_falling__message_box_btn', 'message_box_btn___' + index]"
+            :style="typeof item === 'object' && item.color ? {color: item.color} : {}"
+            @click="$emit('click', !index)"
+        >{{typeof item === 'object' ? item.text : item}}</div>
     </div>
 </template>
 
@@ -21,13 +13,6 @@
 export default {
     props:{
         btnArr: Array
-    },
-    data(){
-        return{
-            btns: this.btnArr.map(item => {
-                return typeof item === 'string' ? { text: item } : item
-            })
-        }
     }
 }
 </script>
@@ -56,16 +41,19 @@ export default {
         text-overflow:ellipsis;
         cursor: pointer;
     }
-    .message_box_btn___1,.message_box_btn___2{
+    .message_box_btn___0,.message_box_btn___1{
         width: 50%;
     }
-    .message_box_btn___2{
+    .spring_falling__message_box_btn_wraper .spring_falling__message_box_btn:only-child{
+        width: 100%;
+    }
+    .message_box_btn___1{
         color: #909399;
         position: absolute;
         top: 0;
         right: 0;
     }
-    .message_box_btn___2::before{
+    .message_box_btn___1::before{
         content: "";
         width: 1px;
         height: 100%;
