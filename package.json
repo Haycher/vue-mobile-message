@@ -1,7 +1,7 @@
 {
   "name": "vue-mobile-message",
-  "version": "1.2.1",
-  "description": "README file has been compiled",
+  "version": "1.2.4",
+  "description": "README file fix",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

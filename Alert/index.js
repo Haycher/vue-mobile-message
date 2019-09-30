@@ -24,22 +24,13 @@ function baseAlert(options){
             isShowing = true;
             fixUtils.preventScroll();
             fixUtils.hideKeyboard();
-            instance.content = options.content;
-            instance.title = options.title;
+            instance.content = options.content || 'null';
+            instance.title = options.title || '';
             instance.type = options.type || '';
             if(options.btn){
-                if(typeof options.btn === 'string'){
-                    instance.btnArr = [{
-                        text: options.btn
-                    }]
-                }else{
-                    let obj = {};
-                    obj.text = options.btn.text || '确定';
-                    if(options.btn.color){
-                        obj.color = options.btn.color
-                    }
-                    instance.btnArr = [obj];
-                }
+                instance.btnArr = [options.btn];
+            }else{
+                instance.btnArr = ['确定'];
             }
             instance.show = true;
             instance.hideMessage = (action) => {
@@ -56,24 +47,21 @@ function baseAlert(options){
     }
 }
 
-baseAlert.message = function(...arg){
-    let options = {
-        content: arg[0],
-        title: arg[1] || '提示',
-        btn: arg[2]
-    };
-    return baseAlert(options);
+baseAlert.message = function(content, title, btn){
+    return baseAlert({
+        content,
+        title: title || '提示',
+        btn
+    });
 };
 
 ['success', 'error', 'warning', 'info'].forEach(type => {
-    baseAlert[type] = (...arg) => {
-        let options = {
-            content: arg[0],
-            title: '',
+    baseAlert[type] = (content, btn) => {
+        return baseAlert({
+            content,
             type,
-            btn: arg[1]
-        };
-        return baseAlert(options);
+            btn
+        });
     }
 });
 

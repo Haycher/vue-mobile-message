@@ -1,19 +1,19 @@
 <template>
     <div class="spring_falling__message_box_btn_wraper">
-        <template v-if="btnArr.length === 2">
+        <template v-if="btns.length === 2">
             <div class="spring_falling__message_box_btn message_box_btn___1"
-                :style="btnArr[0].color ? {color: btnArr[0].color} : {}"
+                :style="btns[0].color ? {color: btns[0].color} : {}"
                 @click="$emit('click', true)"
-            >{{btnArr[0].text}}</div>
+            >{{btns[0].text}}</div>
             <div class="spring_falling__message_box_btn message_box_btn___2"
-                :style="btnArr[1].color ? {color: btnArr[1].color} : {}"
+                :style="btns[1].color ? {color: btns[1].color} : {}"
                 @click="$emit('click', false)"
-            >{{btnArr[1].text}}</div>
+            >{{btns[1].text}}</div>
         </template>
         <div v-else class="spring_falling__message_box_btn message_box_btn___3"
-            :style="btnArr[0].color ? {color: btnArr[0].color} : {}"
+            :style="btns[0].color ? {color: btns[0].color} : {}"
             @click="$emit('click', true)"
-        >{{btnArr[0].text}}</div>
+        >{{btns[0].text}}</div>
     </div>
 </template>
 
@@ -21,6 +21,13 @@
 export default {
     props:{
         btnArr: Array
+    },
+    data(){
+        return{
+            btns: this.btnArr.map(item => {
+                return typeof item === 'string' ? { text: item } : item
+            })
+        }
     }
 }
 </script>

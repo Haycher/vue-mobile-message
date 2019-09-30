@@ -50,7 +50,7 @@ export default {
     max-width: 80%;
     background: #fff;
     padding: 0 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     overflow: hidden;
     transform: scale3d(1.15, 1.15, 1);
     transition: transform ease-out .12s;

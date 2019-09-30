@@ -5,7 +5,7 @@
 npm i vue-mobile-message
 ```
 
-## Project start
+## Project startup
 ### Full installation
 ```JavaScript
 import Vue from 'vue'
@@ -143,7 +143,7 @@ this.$confirm.message(content, [title], [btn]).then((isLeft) => {
 })
 this.$confirm.success(content, [btn]).then()
 
-// for example
+// Example
 this.$confirm.message('this is a message', 'the title', 'left button')
 this.$confirm.message('this is a message', 'the title', [{
     text: 'left button'
@@ -159,6 +159,14 @@ this.$toast({
     title: 'title',
     duration: 2000 //default 1500
 })
+this.$toast.message(content, [title], [duration]);
+this.$toast.success(content, [duration]);
+
+// Example
 this.$toast.message('This is a message', 'title');
-this.$toast.success('Login successfully');
+this.$toast.success('Login successfully', 2000);
 ```
+
+## Contact
+The project's website is located at https://github.com/Haycher/vue-mobile-message.git 
+Author: Haycher, Lyu (spring_falling@163.com)

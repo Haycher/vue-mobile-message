@@ -23,23 +23,28 @@ function baseToast(options){
         isShowing = true;
         fixUtils.preventScroll();
         fixUtils.hideKeyboard();
-        instance.content = options.content;
-        instance.title = options.title;
+        instance.content = options.content || 'null';
+        instance.title = options.title || '';
         instance.type = options.type || '';
         if(options.duration && typeof options.duration === 'number'){
             instance.duration = options.duration;
         }
         instance.show = true;
-        instance.hideToast = hide;
+        instance.hideToast = function(){
+            if(isShowing){
+                instance.show = false;
+                isShowing = false;
+                fixUtils.recoverScroll();
+            }
+        };
     }
 }
 
-baseToast.message = function(...arg){
+baseToast.message = function(content, title, duration){
     baseToast({
-        content: arg[0],
-        title: arg[1],
-        type: '',
-        duration: arg[2]
+        content,
+        title,
+        duration
     });
 };
 
@@ -47,20 +52,11 @@ baseToast.message = function(...arg){
     baseToast[type] = (content, duration) => {
         baseToast({
             content,
-            title: '',
             type,
             duration
         });
     }
 });
-
-function hide(){
-    if(isShowing){
-        instance.show = false;
-        isShowing = false;
-        fixUtils.recoverScroll();
-    }
-}
 
 export default{
     install(Vue){

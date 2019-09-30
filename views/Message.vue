@@ -55,9 +55,9 @@ export default {
     z-index: 99998;
 }
 .spring_falling__message_box_inner{
-    width: 80%;
+    width: 72%;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 8px;
     overflow: hidden;
     transform: scale3d(1.15, 1.15, 1);
     transition: transform ease-out .12s;
