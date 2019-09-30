@@ -1,0 +1,28 @@
+{
+  "name": "vue-mobile-message",
+  "version": "1.2.1",
+  "description": "README file has been compiled",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haycher/vue-mobile-message.git"
+  },
+  "keywords": [
+    "vue",
+    "mobile",
+    "message",
+    "loading",
+    "alert",
+    "confirm",
+    "toast"
+  ],
+  "author": "spring_falling",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Haycher/vue-mobile-message/issues"
+  },
+  "homepage": "https://github.com/Haycher/vue-mobile-message#readme"
+}
