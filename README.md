@@ -36,28 +36,33 @@ this.$loading.hide();
 ### Alert, you could use like this:
 ```JavaScript
 /**
- * @param {
-    content,
-    title,
-    type,
-    btn{ String || Object }
-  } options
+ * @param {Object} options {
+ * {String} content, 
+ * {String} title,
+ * {String} type,
+ * {String | Object} btn, --default '确定'
+ * }
  */
+
 this.$alert(options)
+
+//define button text and color
 this.$alert({
     content: 'This is a message',
     title: 'title',
     type: 'success',
-    btn: {//define text and color
+    btn: {
         text: 'submit',
         color: 'red'
     }
 }).then(() => {
     console.log('The button was clicked')
 });
+
+//define button text only
 this.$alert({
     content: 'This is a message',
-    btn: 'click me'//define text only
+    btn: 'click me'
 }).then(() => {
     console.log('The button was clicked')
 });
@@ -82,14 +87,15 @@ this.$alert.success(content, [btn]).then(() => {
 ### Confirm, Same as alert, you could use like this:
 ```JavaScript
 /**
- * @param {
-  content,
-  title,
-  type,
-  btn{ String || Object },
-  btnArr,
- } options
+ * @param {Object} options {
+ * {String} content, 
+ * {String} title,
+ * {String} type,
+ * {String | Object} btn, --default '确定'
+ * {Array} btnArr --default ['确定', '取消']
+ * }
  */
+
 //define left button text and color
 this.$confirm({
     content: 'This is a message',
