@@ -100,6 +100,7 @@ export default {
 
 ## Usage
 ### Loading
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/vue-mobile-message4.png?raw=true)
 ```JavaScript
 this.$loading.show();
 this.$loading.show('loading...');
@@ -107,6 +108,7 @@ this.$loading.hide();
 ```
 
 ### Show Alert common
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/vue-mobile-message0.png?raw=true)
 ```html
 <template>
     <div id="app">
@@ -284,6 +286,7 @@ export default {
 
 
 ### Show Confirm with a title
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/vue-mobile-message2.png?raw=true)
 ```html
 <script>
 // this.$confirm.message(content [,title] [,btn])
@@ -326,6 +329,7 @@ export default {
 
 
 ### Show Confirm with a icon without title, four types is supported (success | warning | error | info)
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/vue-mobile-message1.png?raw=true)
 ```html
 <script>
 // this.$confirm.[type](content [,btn])
@@ -365,6 +369,7 @@ export default {
 
 
 ### Show Toast
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/vue-mobile-message3.png?raw=true)
 ```html
 <script>
 export default {
