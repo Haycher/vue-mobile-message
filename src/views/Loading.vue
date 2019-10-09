@@ -160,7 +160,7 @@ export default {
 
 @keyframes loading_opacity6 {
     0% {
-        opacity: 0.270958333333333;
+        opacity: 0.270958;
     }
     41.6767% {
         opacity: 0.25;
@@ -172,7 +172,7 @@ export default {
         opacity: 0.25;
     }
     100% {
-        opacity: 0.270958333333333;
+        opacity: 0.270958;
     }
 }
 
@@ -196,7 +196,7 @@ export default {
 
 @keyframes loading_opacity8 {
     0% {
-        opacity: 0.479291666666667;
+        opacity: 0.479291;
     }
     58.3433% {
         opacity: 0.25;
@@ -208,13 +208,13 @@ export default {
         opacity: 0.25;
     }
     100% {
-        opacity: 0.479291666666667;
+        opacity: 0.479291;
     }
 }
 
 @keyframes loading_opacity9 {
     0% {
-        opacity: 0.583458333333333;
+        opacity: 0.583458;
     }
     66.6767% {
         opacity: 0.25;
@@ -226,7 +226,7 @@ export default {
         opacity: 0.25;
     }
     100% {
-        opacity: 0.583458333333333;
+        opacity: 0.583458;
     }
 }
 
@@ -250,7 +250,7 @@ export default {
 
 @keyframes loading_opacity11 {
     0% {
-        opacity: 0.791791666666667;
+        opacity: 0.791791;
     }
     83.3433% {
         opacity: 0.25;
@@ -262,13 +262,13 @@ export default {
         opacity: 0.25;
     }
     100% {
-        opacity: 0.791791666666667;
+        opacity: 0.791791;
     }
 }
 
 @keyframes loading_opacity12 {
     0% {
-        opacity: 0.895958333333333;
+        opacity: 0.895958;
     }
     91.6767% {
         opacity: 0.25;
@@ -280,7 +280,7 @@ export default {
         opacity: 0.25;
     }
     100% {
-        opacity: 0.895958333333333;
+        opacity: 0.895958;
     }
 }
 </style>

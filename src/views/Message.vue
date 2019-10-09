@@ -1,8 +1,8 @@
 <template>
-    <div class="spring_falling__message_box_wraper" v-if="show">
-        <div class="spring_falling__message_box_inner" :style="styleObj">
-            <Content :title="title" :content="content" :type="type" />
-            <Btn :btnArr="btnArr" @click="onAction" />
+    <div class="spring_falling__message_box_wraper" :style="{background: styles.maskColor}" v-if="show">
+        <div class="spring_falling__message_box_inner" :style="{ background: styles.background, transform }">
+            <Content :title="title" :content="content" :type="type" :options="msgOptions" :styles="styles" :htmlSupport="htmlSupport" />
+            <Btn :btnArr="btnArr" @click="onAction" :borderColor="styles.borderColor" />
         </div>
     </div>
 </template>
@@ -16,21 +16,20 @@ export default {
     },
     data(){
         return {
-            content: 'null',
-            title: '提示',
+            msgOptions: {},
+            styles: {},
+            htmlSupport: false,
+            content: '',
+            title: '',
             type: '',
             show: false,
-            btnArr: [{
-                text: '确定'
-            }],
-            styleObj: {}
+            btnArr: [],
+            transform: 'scale3d(1.15, 1.15, 1)'
         }
     },
     mounted(){
         setTimeout(() => {
-            this.styleObj = {
-                transform: 'scale3d(1, 1, 1)'
-            }
+            this.transform = 'scale3d(1, 1, 1)'
         }, 50);
     },
     methods:{
@@ -45,7 +44,6 @@ export default {
 .spring_falling__message_box_wraper{
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
     position: fixed;
     left: 0;
     top: 0;
@@ -56,10 +54,9 @@ export default {
 }
 .spring_falling__message_box_inner{
     width: 72%;
-    background: #fff;
+    max-width: 300px;
     border-radius: 8px;
     overflow: hidden;
-    transform: scale3d(1.15, 1.15, 1);
     transition: transform ease-out .12s;
 }
 </style>

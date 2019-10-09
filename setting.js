@@ -1,6 +1,6 @@
 export default{
     colors: {
-        success: '#67C23A',
+        success: '#343434',
         warning: '#E6A23C',
         error: '#F56C6C',
         info: '#909399'
@@ -10,5 +10,26 @@ export default{
         warning: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAM1BMVEUAAADmojzmojzmojzmojzmojzmojzmojzmojzmojzmojzmojzmojzmojzmojzmojzmojxZQX76AAAAEHRSTlMAQDAQr8+f74C/YN9QII9wvxYp8gAAAeVJREFUWMPFl+FuwyAMhG1DShLIkvd/2lWWM3elvjZi0u5X1YQvxoA5UySe83SYpjwzXVFa89Epr4k+k9yOQDf5ZPhyAC3vEMm/XvLcWNXmXDwKOJF2vjjt8hTYXk9wo1Bf51de5pzP6L6i8CdL90aBtmzxJTC+MgFxDQlp8hzBLBshGL/++txhoketrwk6vgghgEmKEp7z7+NdPcAI3Vo0fU8IA5yg/zb/IxWffwewaPs8FE/DTfNPEWChU/0Ij6imK4BUH+es54+pVwkBxPbgJ4BML7TEAMoags9nuwrYfrKQ7FcMmKmXfTedS8LXAaxLb5OpdAnguz/bWu1BgYGA/bjLIglK5QwBonPXlwqFABAfFYVnnQkEBDXKhk6KwQDweCI/mJcBTbOI3mAM4L8DbBiwjUZA/weQTwGNAiGAnWPbSBiANhLcymQFCW1lO0wYgA4TPM4YIJZ/dGArAuyWn6ypADVtAfSMiyoJ3yUEiqqXdSRU1v1iAUIXi19tQOBqw5cr8XJHS5iBBV3vblyKgOsdG4z61mBgiyOHCVgcaLL4ncnCNs8dSgU2DxhNvxcaMJrI6hqhrAStLjbbiRmY7RG7P95wjLc8uOmqF5ou0PatzMLMK2j7RhvP8dZ3vPkebv+/ASaQQTlzFrVwAAAAAElFTkSuQmCC',
         error: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAM1BMVEUAAAD1bGz1bGz1bGz1bGz1bGz1bGz1bGz1bGz1bGz1bGz1bGz1bGz1bGz1bGz1bGz1bGzZHY8oAAAAEHRSTlMAYBCfz0Awr++A31CPcCC/iCJ5qwAAAdlJREFUWMOll9uygyAMRQkYUajW///aM2bwxBq3l0keW/Yy5AIkIOMxd0uzLo8c3likvBjLFB/K+7QAS/0T+Xe5sO8dIurXhzxWFqtjHtSLy43UbWE39QfHprKBK9Z/tq/waV427z7I/Za2PAdgc27+xQt9ucw4l0aA+hTvoywEoKdwa3ROEP3QPyq0QQgm/laPCSYXVdwyekiQ5XUXgAHvH8dh0DAkif8DoVWoRyW+aviy37P0H4dXxtKbOwdyeGlZXND9/NY/kVXQb5Lm/yhEG0E6SQkdy0S+G7eU8EFvCGQKjWVV20w5lLUh0MlB0LXQrf9MqLFUbytlWn9rnvSgNZFes8dhXDeHm9vq1dYGGEOWnWAC1jdpJxhMwHpxvgutMSEB6tshIAAOmID1gQFACUaPADO6KID+1gMtFTF6D9D8GwICYL0SMKBifWrZhCtaIUG9VhQoJFDKWn+Y0KTSTFgPCNpM2s5ADwjaznqgqI2qRwQ9UEI2V21S/RWhSAj0ULX3liGQPVTPj/UkPxgCWT8juFiS6pVA4GJxXW3ey9V9vXsfGO4njveR5X3meR+a7qeu/7Htf+77Bw7/yIOHrvJm6MJjHzH3zExw7PMPnv7R1z98u8f/P4PyP0uVS3HNAAAAAElFTkSuQmCC',
         info: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAM1BMVEUAAACQk5mQk5mQk5mQk5mQk5mQk5mQk5mQk5mQk5mQk5mQk5mQk5mQk5mQk5mQk5mQk5kC+PhXAAAAEHRSTlMAEEAwz6+f72CAUN+/jyBwvD7TIgAAAjhJREFUWMOcVG2bgyAMo7xYQCf8/197z3qwOiHcbvmobUzTWINgU/C1wYdkzX9AMdQBIdKH7W6rAJv7pP2oCxx/UZB+nUPKVpBTYFWxHCT3Ql/cTVjZO3HG/Y/+lanntqt7IPm+2X0agDM0fbTo35cbtztkIA88opjKeXfZE+iPwNekD+KcQfrZjWPXemd2LAw3/0G/6c7v5sow7CJL0Sxlr1y+hUKe5IsBPMwPCdQHpnedm1GgEUCHkwqaZ4er6lXQ3mZWmSg/7lnKw3hW/s2LgLBIX8oTdUEk6Dwg/xjnywXCDhoq4QiRsL0kK4EOOF78fLavPlyXNG4b6/PNumdFwf2CKUH5fWNRiF3FBFpgTXquGc8vOMwULP95mIeAuO55fQRbqxeayX156JEFdzjJWZgXbBybz23bM2SxZ5qCwu5yjTzKOCRwnoRmsAARnHcC6iZhC7ACRW2gLwmypuAbAl1iWhPgIX9KL4MUhmEgBrbrGBviJP//baGHzsHMQtl7Q0mklUbf1MLncixiJETE52Kkbnk2s1vGynJMiEhdyDHpOY9MRM5ZAyVyHxMor86vVERVqXuoHpuIFqrEuot4PRrrFIuL+F6HFgvV5iK2czSvNsrVRJwDq2/lavWOiHdHCKl3cGETUbzME444KykFEEcgi28ozQpkOebF7/95XjBPQHMOC2RAM0fd++nravL+Bss+SAS2i7hfHxz1yeOj6/xndPnsmxEtIqbOvvrwrE/f+vguz/8PdnBHGGQeOHgAAAAASUVORK5CYII='
-    }
+    },
+    htmlSupport: false,
+    maskColor: 'rgba(0, 0, 0, 0.4)',
+    background: '#ffffff',
+    titleColor: '#111111',
+    messageColor: '#343434',
+    borderColor: '#c0c4cc',
+    title: '提示',
+    alertBtn: {
+        text: '确定',
+        color: '#007aff'
+    },
+    confirmLeftBtn: {
+        text: '确定',
+        color: '#007aff'
+    },
+    confirmRightBtn: {
+        text: '取消',
+        color: '#007aff'
+    },
+    duration: 1500,
+    loadingText: '加载中'
 }

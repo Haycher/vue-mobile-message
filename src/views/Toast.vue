@@ -1,7 +1,7 @@
 <template>
-    <div class="spring_falling__message_toast_box_wraper" v-if="show">
-        <div class="spring_falling__message_toast_box_inner" :style="styleObj">
-            <Content :title="title" :content="content" :type="type" />
+    <div class="spring_falling__message_toast_box_wraper" :style="{ background: styles.maskColor }" v-if="show">
+        <div class="spring_falling__message_toast_box_inner" :style="{ background: styles.background, transform }">
+            <Content :title="title" :content="content" :type="type" :options="msgOptions" :styles="styles" :htmlSupport="htmlSupport" />
         </div>
     </div>
 </template>
@@ -13,21 +13,18 @@ export default {
     },
     data(){
         return {
+            msgOptions: {},
+            styles: {},
+            htmlSupport: false,
             content: 'null',
             type: '',
             show: false,
-            duration: 1500,
-            styleObj: {}
+            transform: 'scale3d(1.15, 1.15, 1)'
         }
     },
     mounted(){
         setTimeout(() => {
-            this.styleObj = {
-                transform: 'scale3d(1, 1, 1)'
-            };
-            setTimeout(() => {
-                this.hideToast()
-            }, this.duration);
+            this.transform = 'scale3d(1, 1, 1)';
         }, 50);
     }
 }
@@ -37,7 +34,6 @@ export default {
 .spring_falling__message_toast_box_wraper{
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
     position: fixed;
     left: 0;
     top: 0;
@@ -47,12 +43,10 @@ export default {
     z-index: 99997;
 }
 .spring_falling__message_toast_box_inner{
-    max-width: 80%;
-    background: #fff;
+    max-width: 300px;
     padding: 0 15px;
     border-radius: 8px;
     overflow: hidden;
-    transform: scale3d(1.15, 1.15, 1);
     transition: transform ease-out .12s;
 }
 </style>

@@ -1,20 +1,17 @@
-import Alert from './Alert'
-import Confirm from './Confirm'
-import Toast from './Toast'
-import Loading from './Loading'
+import Loading from './src/Loading'
+import MessageBox from './src/MessageBox'
+import Toast from './src/Toast'
 
 export default{
-    install(Vue){
-        Vue.use(Alert);
-        Vue.use(Confirm);
-        Vue.use(Toast);
-        Vue.use(Loading);
+    install(Vue, options){
+        Vue.use(MessageBox, options);
+        Vue.use(Toast, options);
+        Vue.use(Loading, options);
     }
 }
 
 export{
-    Alert,
-    Confirm,
+    MessageBox,
     Toast,
     Loading
 }
