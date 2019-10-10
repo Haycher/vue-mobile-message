@@ -39,9 +39,9 @@ background | Pop-up background color | 弹窗的背景色 | <code>String</code> 
 titleColor | Pop-up title color | 弹窗标题颜色 | <code>String</code> | #111111
 messageColor | Pop-up content color | 弹窗内容颜色 | <code>String</code> | #343434
 borderColor | Pop-up split line color | 弹窗分割线颜色 | <code>String</code> | #c0c4cc
-alertBtn | Pop-up alert button | alert弹窗按钮 | <code>String | Object</code> | {text: '确定', color: '#007aff'}
-confirmLeftBtn | Pop-up confirm left button | confirm弹窗左侧按钮 | <code>String | Object</code> | {text: '确定', color: '#007aff'}
-confirmRightBtn | Pop-up confirm right button | confirm弹窗右侧按钮 | <code>String | Object</code> | {text: '取消', color: '#007aff'}
+alertBtn | Pop-up alert button | alert弹窗按钮 | <code>String | Object</code> | `{text: '确定', color: '#007aff'}`
+confirmLeftBtn | Pop-up confirm left button | confirm弹窗左侧按钮 | <code>String | Object</code> | `{text: '确定', color: '#007aff'}`
+confirmRightBtn | Pop-up confirm right button | confirm弹窗右侧按钮 | <code>String | Object</code> | `{text: '取消', color: '#007aff'}`
 duration | Toast show time | Toast弹窗显示时长 | <code>Number</code> | 1500
 loadingText | Loading default text | Loading默认显示文字 | <code>String</code> | 正在加载
 
