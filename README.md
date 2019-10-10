@@ -31,90 +31,19 @@ new Vue({
 
 ### About options
 
- name  | description  | value | default
- ---- | -------------- | ------ | ------  
- maskColor | mask color/蒙层颜色 | <code>String</code> | rgba(0, 0, 0, 0.4)
- htmlSupport | Pop-up content support html \| 弹窗内容是否支持html | <code>Boolean</code> | false
-
-
-```html
-<table>
-    <tbody>
-        <th>
-            <td>name</td>
-            <td>description</td>
-            <td>value</td>
-            <td>default</td>
-        </th>
-        <tr>
-            <td>maskColor</td>
-            <td>mask color | 蒙层颜色</td>
-            <td><code>String</code></td>
-            <td>rgba(0, 0, 0, 0.4)</td>
-        </tr>
-        <tr>
-            <td>htmlSupport</td>
-            <td>Pop-up content support html | 弹窗内容是否支持html</td>
-            <td><code>Boolean</code></td>
-            <td>false</td>
-        </tr>
-        <tr>
-            <td>background</td>
-            <td>Pop-up background color | 弹窗的背景色</td>
-            <td><code>String</code></td>
-            <td>#ffffff</td>
-        </tr>
-        <tr>
-            <td>titleColor</td>
-            <td>Pop-up title color | 弹窗标题颜色</td>
-            <td><code>String</code></td>
-            <td>#111111</td>
-        </tr>
-        <tr>
-            <td>messageColor</td>
-            <td>Pop-up content color | 弹窗内容颜色</td>
-            <td><code>String</code></td>
-            <td>#343434</td>
-        </tr>
-        <tr>
-            <td>borderColor</td>
-            <td>Pop-up split line color | 弹窗分割线颜色</td>
-            <td><code>String</code></td>
-            <td>#c0c4cc</td>
-        </tr>
-        <tr>
-            <td>alertBtn</td>
-            <td>Pop-up alert button | alert弹窗按钮</td>
-            <td><code>String | Object</code></td>
-            <td><code>{text: '确定', color: '#007aff'}</code></td>
-        </tr>
-        <tr>
-            <td>confirmLeftBtn</td>
-            <td>Pop-up confirm left button | confirm弹窗左侧按钮</td>
-            <td><code>String | Object</code></td>
-            <td><code>{text: '确定', color: '#007aff'}</code></td>
-        </tr>
-        <tr>
-            <td>confirmRightBtn</td>
-            <td>Pop-up confirm right button | confirm弹窗右侧按钮</td>
-            <td><code>String | Object</code></td>
-            <td><code>{text: '取消', color: '#007aff'}</code></td>
-        </tr>
-        <tr>
-            <td>duration</td>
-            <td>Toast show time | Toast弹窗显示时长</td>
-            <td><code>Number</code></td>
-            <td>1500</td>
-        </tr>
-        <tr>
-            <td>loadingText</td>
-            <td>Loading default text | Loading默认显示文字</td>
-            <td><code>String</code></td>
-            <td>正在加载</td>
-        </tr>
-    </tbody>
-</table>
-```
+name | description | 描述 | value | default
+---- | ----------- | ----------- | ------ | ------  
+maskColor | mask color | 蒙层颜色 | <code>String</code> | rgba(0, 0, 0, 0.4)
+htmlSupport | Pop-up content support html | 弹窗内容是否支持html | <code>Boolean</code> | false
+background | Pop-up background color | 弹窗的背景色 | <code>String</code> | #ffffff
+titleColor | Pop-up title color | 弹窗标题颜色 | <code>String</code> | #111111
+messageColor | Pop-up content color | 弹窗内容颜色 | <code>String</code> | #343434
+borderColor | Pop-up split line color | 弹窗分割线颜色 | <code>String</code> | #c0c4cc
+alertBtn | Pop-up alert button | alert弹窗按钮 | <code>String | Object</code> | <code>{text: '确定', color: '#007aff'}</code>
+confirmLeftBtn | Pop-up confirm left button | confirm弹窗左侧按钮 | <code>String | Object</code> | <code>{text: '确定', color: '#007aff'}</code>
+confirmRightBtn | Pop-up confirm right button | confirm弹窗右侧按钮 | <code>String | Object</code> | <code>{text: '取消', color: '#007aff'}</code>
+duration | Toast show time | Toast弹窗显示时长 | <code>Number</code> | 1500
+loadingText | Loading default text | Loading默认显示文字 | <code>String</code> | 正在加载
 
 #### Example-1
 ```Javascript
