@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import {bindFunction, unbindFunction} from '../../../vue-mobile-tap'
+import {bindFunction, unbindFunction} from 'vue-mobile-tap'
 export default {
     props:{
         btnArr: Array,
