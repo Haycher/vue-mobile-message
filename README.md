@@ -30,6 +30,12 @@ new Vue({
 ```
 
 ### About options
+
+ name  | description  | value | default
+ ---- | -------------- | ------ | ------  
+ maskColor | mask color/蒙层颜色 | <code>String</code> | rgba(0, 0, 0, 0.4)
+
+ 
 ```html
 <table>
     <tbody>
