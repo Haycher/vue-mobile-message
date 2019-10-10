@@ -31,5 +31,5 @@ export default{
         color: '#007aff'
     },
     duration: 1500,
-    loadingText: '加载中'
+    loadingText: '正在加载'
 }

@@ -30,34 +30,83 @@ new Vue({
 ```
 
 ### About options
-```Javascript
-/**
- * 
- * options --default
-{
-    maskColor: 'rgba(0, 0, 0, 0.4)', --Mask color
-    htmlSupport: false,              --Pop-up content html support
-    background: '#ffffff',           --Pop-up background color
-    titleColor: '#111111',           --Pop-up title color
-    messageColor: '#343434',         --Pop-up content color
-    borderColor: '#c0c4cc',          --Pop-up split Line Color
-    title: '提示',                    --Pop-up default title
-    alertBtn: {
-        text: '确定',
-        color: '#007aff'
-    },
-    confirmLeftBtn: {
-        text: '确定',
-        color: '#007aff'
-    },
-    confirmRightBtn: {
-        text: '取消',
-        color: '#007aff'
-    },
-    duration: 1500,                 --Toast default duration
-    loadingText: '加载中'            --Loading default text
-}
- */
+```html
+<table>
+    <tbody>
+        <th>
+            <td>name</td>
+            <td>description</td>
+            <td>value</td>
+            <td>default</td>
+        </th>
+        <tr>
+            <td>maskColor</td>
+            <td>mask color | 蒙层颜色</td>
+            <td><code>String</code></td>
+            <td>rgba(0, 0, 0, 0.4)</td>
+        </tr>
+        <tr>
+            <td>htmlSupport</td>
+            <td>Pop-up content support html | 弹窗内容是否支持html</td>
+            <td><code>Boolean</code></td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>background</td>
+            <td>Pop-up background color | 弹窗的背景色</td>
+            <td><code>String</code></td>
+            <td>#ffffff</td>
+        </tr>
+        <tr>
+            <td>titleColor</td>
+            <td>Pop-up title color | 弹窗标题颜色</td>
+            <td><code>String</code></td>
+            <td>#111111</td>
+        </tr>
+        <tr>
+            <td>messageColor</td>
+            <td>Pop-up content color | 弹窗内容颜色</td>
+            <td><code>String</code></td>
+            <td>#343434</td>
+        </tr>
+        <tr>
+            <td>borderColor</td>
+            <td>Pop-up split line color | 弹窗分割线颜色</td>
+            <td><code>String</code></td>
+            <td>#c0c4cc</td>
+        </tr>
+        <tr>
+            <td>alertBtn</td>
+            <td>Pop-up alert button | alert弹窗按钮</td>
+            <td><code>String | Object</code></td>
+            <td><code>{text: '确定', color: '#007aff'}</code></td>
+        </tr>
+        <tr>
+            <td>confirmLeftBtn</td>
+            <td>Pop-up confirm left button | confirm弹窗左侧按钮</td>
+            <td><code>String | Object</code></td>
+            <td><code>{text: '确定', color: '#007aff'}</code></td>
+        </tr>
+        <tr>
+            <td>confirmRightBtn</td>
+            <td>Pop-up confirm right button | confirm弹窗右侧按钮</td>
+            <td><code>String | Object</code></td>
+            <td><code>{text: '取消', color: '#007aff'}</code></td>
+        </tr>
+        <tr>
+            <td>duration</td>
+            <td>Toast show time | Toast弹窗显示时长</td>
+            <td><code>Number</code></td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>loadingText</td>
+            <td>Loading default text | Loading默认显示文字</td>
+            <td><code>String</code></td>
+            <td>正在加载</td>
+        </tr>
+    </tbody>
+</table>
 ```
 
 #### Example-1
@@ -100,7 +149,7 @@ export default {
 
 ## Usage
 ### Loading
-![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/vue-mobile-message4.png?raw=true)
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/loading.png?raw=true)
 ```JavaScript
 this.$loading.show();
 this.$loading.show('loading...');
@@ -108,7 +157,7 @@ this.$loading.hide();
 ```
 
 ### Show Alert common
-![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/vue-mobile-message0.png?raw=true)
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/alert1.png?raw=true)
 ```html
 <template>
     <div id="app">
@@ -122,17 +171,19 @@ export default {
         test1(){
             this.$alert({
                 styles:{
-                    maskColor:  '#000',
-                    background: '#000',
-                    titleColor: '#000',
-                    messageColor: '#000'
+                    maskColor:  'rgba(40, 40, 40, .3)',
+                    background: '#ff5a5a',
+                    titleColor: '#fff',
+                    messageColor: '#f3f3f3',
+                    borderColor: '#ffb6b6'
                 },
-                content: 'This is a message',
-                title: 'title',
-                type: 'success',
+                htmlSupport: true,
+                content: `<div>您输入的手机号有误</div>`,
+                title: `<div>提示</div>`,
+                // type: 'success',
                 btn: {
-                    text: 'submit',
-                    color: '#f00'
+                    text: '重新输入',
+                    color: '#f1f1f1'
                 }
             }).then(() => {
                 console.log('The button was clicked')
@@ -142,17 +193,13 @@ export default {
             this.$alert({
                 content: 'This is a message',
                 title: 'title'
-            }).then(() => {
-                console.log('The button was clicked')
-            });
+            }).then();
         },
         test3(){
             this.$alert({
                 content: 'This is a message',
                 type: 'success'
-            }).then(() => {
-                console.log('The button was clicked')
-            });
+            }).then();
         }
     }
 }
@@ -160,40 +207,35 @@ export default {
 ```
 
 ### Show Alert with a title
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/alert2.png?raw=true)
 ```html
 <script>
 // this.$alert.message(content [,title] [,btn])
 export default {
     methods: {
         test1(){
-            this.$alert.message('This is a message').then(() => {
+            this.$alert.message('您输入的手机号有误').then(() => {
                 console.log('The button was clicked')
             });
         },
         test2(){
-            this.$alert.message('This is a message', 'I am a title').then(() => {
-                console.log('The button was clicked')
-            });
+            this.$alert.message('This is a message', 'I am a title')
         },
-        test3(){
-            this.$alert.message('This is a message', null, 'I am button').then(() => { //use default title
-                console.log('The button was clicked')
-            });
+        test3(){ //use default title
+            this.$alert.message('This is a message', null, 'I am button')
         },
-        test4(){
-            this.$alert.message('This is a message', null, { //define btn text and color
+        test4(){ //define btn text and color and use default title
+            this.$alert.message('This is a message', null, {
                 text: 'I am button',
                 color: '#f00'
-            }).then(() => {
-                console.log('The button was clicked')
-            });
+            })
         }
     }
 }
 </script>
 ```
 
-### Show Alert with a icon without title, four types is supported (success | warning | error | info)
+### Show Alert with a icon without title, four types are supported (success | warning | error | info)
 ```html
 <script>
 // this.$alert.[type](content [,btn])
@@ -204,18 +246,14 @@ export default {
                 console.log('The button was clicked')
             });
         },
-        test2(){
-            this.$alert.error('Password is not correct', 'I am a button').then(() => {
-                console.log('The button was clicked')
-            });
+        test2(){ //define btn text only
+            this.$alert.error('Password is not correct', 'I am a button')
         },
-        test3(){
-            this.$alert.warning('Something is wrong, but I am not going to tell you.', { //define btn text and color
+        test3(){ //define btn text and color
+            this.$alert.warning('Something is wrong, but I am not going to tell you.', {
                 text: 'I am a button',
                 color: '#f00'
-            }).then(() => {
-                console.log('The button was clicked')
-            });
+            })
         }
     }
 }
@@ -224,6 +262,9 @@ export default {
 
 
 ### Show Confirm common
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/confirm1.png?raw=true)
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/confirm3.png?raw=true)
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/confirm2.png?raw=true)
 ```html
 <template>
     <div id="app">
@@ -234,50 +275,49 @@ export default {
 <script>
 export default {
     methods: {
-        test1(){//define left button only 
+        test1(){//define both buttons
             this.$confirm({
                 styles:{
-                    maskColor:  '#000',
-                    background: '#000',
-                    titleColor: '#000',
-                    messageColor: '#000'
+                    maskColor:  'rgba(100,100,100,.3)',
+                    background: '#ff5a5a',
+                    titleColor: '#fff',
+                    messageColor: '#f3f3f3',
+                    borderColor: '#ffb6b6'
                 },
-                content: 'This is a message',
-                title: 'title',
-                type: 'success',
-                btn: {
-                    text: 'yes',
-                    color: '#f00'
-                }
-            }).then(ifLeft => {
-                console.log('The button was clicked')
-            });
-        },
-        test2(){//define both buttons
-            this.$confirm({
-                styles:{
-                    maskColor:  '#000',
-                    background: '#000',
-                    titleColor: '#000',
-                    messageColor: '#000'
-                },
-                content: 'This is a message',
-                title: 'title',
-                type: 'success',
+                htmlSupport: true,
+                content: `
+                    <div>您输入的手机号有误</div>
+                    <div style="margin-top:5px">请您再次确认一下看看</div>`,
+                title: '<div style="font-size:1.5em;">重要提示</div>',
+                // type: 'success',
                 btnArr: [{
-                    text: 'yes',
-                    color: '#f00'
+                    text: '重新输入',
+                    color: '#f1f1f1'
                 },{
-                    text: 'cancel',
-                    color: '#999'
+                    text: '我不改',
+                    color: '#f1f1f1'
                 }]
             }).then(isLeft => {
                 if(isLeft){
-                    console.log('The left button was clicked')
+                    console.log('Left button was clicked')
                 }else{
-                    console.log('The right button was clicked')
+                    console.log('Right button was clicked')
                 }
             });
+        },
+        test2(){//define left button only
+            this.$confirm({
+                content: '您输入的手机号有误',
+                title: '提示',
+                btn: '重新输入'
+            }).then();
+        },
+        test3(){//define button text only
+            this.$confirm({
+                content: 'Won the prize. Are you ready for it?',
+                type: 'success',
+                btnArr: ['Yes, of course', 'Not yet']
+            }).then();
         }
     }
 }
@@ -286,41 +326,35 @@ export default {
 
 
 ### Show Confirm with a title
-![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/vue-mobile-message2.png?raw=true)
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/confirm4.png?raw=true)
 ```html
 <script>
 // this.$confirm.message(content [,title] [,btn])
 export default {
     methods: {
-        test1(){
-            this.$confirm.message('This is a message').then(isLeft => { //use default title and button 
-                if(isLeft){
-                    console.log('The left button was clicked')
-                }else{
-                    console.log('The right button was clicked')
-                }
-            });
+        test1(){//use default title and button
+            this.$confirm.message('密码有误，请重新输入').then(isLeft => {});
         },
         test2(){
-            this.$confirm.message('This is a message', 'I am a title').then(isLeft => {});
+            this.$confirm.message('This is a message', 'I am a title').then();
         },
-        test3(){
-            this.$confirm.message('This is a message', null, 'left button').then(isLeft => {}); //define left button text only
+        test3(){//define left button text only and use default title
+            this.$confirm.message('This is a message', null, 'left button').then();
         },
-        test4(){
-            this.$confirm.message('This is a message', null, { //define left button text and color
+        test4(){ //define left button text and color and use default title
+            this.$confirm.message('This is a message', null, {
                 text: 'left button',
                 color: '#f00'
-            }).then(isLeft => {});
+            }).then();
         },
-        test5(){
-            this.$confirm.message('This is a message', null, [{ //define both buttons
+        test5(){ //define both buttons and use default title
+            this.$confirm.message('This is a message', null, [{
                 text: 'left button',
                 color: '#f00'
             },{
                 text: 'right button',
                 color: '#0ff'
-            }]).then(isLeft => {});
+            }]).then();
         }
     }
 }
@@ -328,33 +362,33 @@ export default {
 ```
 
 
-### Show Confirm with a icon without title, four types is supported (success | warning | error | info)
-![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/vue-mobile-message1.png?raw=true)
+### Show Confirm with a icon without title, four types are supported (success | warning | error | info)
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/confirm5.png?raw=true)
 ```html
 <script>
 // this.$confirm.[type](content [,btn])
 export default {
     methods: {
-        test1(){
-            this.$confirm.success('Winning the prize. Are you ready for it?').then(isLeft => { //use default button 
-                if(isLeft){
-                    console.log('The left button was clicked')
+        test1(){ //define both buttons text
+            this.$confirm.success('恭喜你！抽到200元优惠券一张', ['立即使用', '暂时不用']).then(isLeft => {}); 
+        },
+        test2(){ //define left button text only
+            this.$confirm.error('Are you really going to die?', 'Yes').then(ifLeft => {
+                if(ifLeft){
+                    console.log("You're dead. God's waiting for you.")
                 }else{
-                    console.log('The right button was clicked')
+                    console.log('You are alive, do you still want to die?')
                 }
             });
         },
-        test2(){
-            this.$confirm.error('Are you really going to die?', 'Yes').then(isLeft => {}); //define left button text only
-        },
-        test3(){
-            this.$confirm.info('This is a message', { //define left button text and color
+        test3(){ //define left button text and color
+            this.$confirm.info('This is a message', {
                 text: 'left button',
                 color: '#f00'
             }).then(isLeft => {});
         },
-        test4(){
-            this.$confirm.info('This is a message', [{ //define both buttons
+        test4(){ //define both buttons text and color
+            this.$confirm.info('This is a message', [{
                 text: 'left button',
                 color: '#f00'
             },{
@@ -369,7 +403,8 @@ export default {
 
 
 ### Show Toast
-![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/vue-mobile-message3.png?raw=true)
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/toast1.png?raw=true)
+![Image text](https://github.com/Haycher/vue-mobile-message/blob/master/images/toast2.png?raw=true)
 ```html
 <script>
 export default {
@@ -387,21 +422,20 @@ export default {
                 title: 'title',
                 duration: 2000 //default 1500
             }).then(() => {
-                console.log('toast was hided');
+                console.log('toast finished');
             })
         },
 
         // this.$toast.message(content [,title] [,duration])
         test2(){
-            this.$toast.message('This is a message', 'title').then();
+            this.$toast.message('This is a message', 'title');
         },
         test3(){
-            this.$toast.message('This is a message', null, 2000).then();
-        }
-
+            this.$toast.message('This is a message', null, 2000);
+        },
         // this.$toast.[type](content [,duration])
         test2(){
-            this.$toast.success('This is a message', 2000).then();
+            this.$toast.success('This is a message', 2000);
         }
     }
 }
