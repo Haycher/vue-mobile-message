@@ -34,8 +34,9 @@ new Vue({
  name  | description  | value | default
  ---- | -------------- | ------ | ------  
  maskColor | mask color/蒙层颜色 | <code>String</code> | rgba(0, 0, 0, 0.4)
+ htmlSupport | <span>Pop-up content support html | 弹窗内容是否支持html</span> | <code>Boolean</code> | false
 
- 
+
 ```html
 <table>
     <tbody>
