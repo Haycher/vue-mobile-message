@@ -22,7 +22,7 @@ import Vue from 'vue'
 import { MessageBox, Toast, Loading } from 'vue-mobile-message'
 Vue.use(MessageBox, options)    //( this.$alert | this.$confirm )
 Vue.use(Toast, options)         //( this.$toast )
-Vue.use(Loading, options)        //( this.$loading )
+Vue.use(Loading, options)       //( this.$loading )
 
 new Vue({
     render: h => h(App)

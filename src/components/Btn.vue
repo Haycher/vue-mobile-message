@@ -8,7 +8,7 @@
                 v-for="(item, index) in btnArr" :key="index"
                 :data-index="index"
                 :style="{color: item.color}"
-                v-tap.stop="[action, !index]"
+                v-tap.stop.prevent="[action, !index]"
             >{{ item.text }}</div>
         </div>
         <div class="spring_falling__message_box_btn_center_line" v-if="btnArr.length === 2" :style="{
